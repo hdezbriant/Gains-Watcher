@@ -89,12 +89,10 @@ let workoutSeed = [
     day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
-        type: "resistance",
-        name: "Quad Press",
-        duration: 30,
-        weight: 300,
-        reps: 10,
-        sets: 4,
+        type: "cardio",
+        name: "shoveling coal",
+        duration: 20,
+        distance: 2,
       },
     ],
   },
@@ -115,12 +113,10 @@ let workoutSeed = [
     day: new Date(new Date().setDate(new Date().getDate() - 2)),
     exercises: [
       {
-        type: "resistance",
-        name: "Military Press",
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4,
+        type: "cardio",
+        name: "Heavy Breathing",
+        duration: 60,
+        distance: 1,
       },
     ],
   },
