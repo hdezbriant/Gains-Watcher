@@ -22,5 +22,18 @@ router.put("/workouts/:id", async (req, res) => {
   }
 });
 
+// router.post("/workouts", async (req, res) => {
+//   try {
+//   } catch (err) {}
+// });
+
+router.get("/workouts/range", async (req, res) => {
+  try {
+    const workoutWeek = await db.Workout.find({}).sort({day: -1}).limit(7);
+    res.status(200).json(workoutWeek);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
 
 module.exports = router;
