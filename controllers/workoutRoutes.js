@@ -11,6 +11,16 @@ router.get("/workouts", async (req, res) => {
   }
 });
 
+router.put("/workouts/:id", async (req, res) => {
+  try {
+    const continuingWorkout = await db.Workout.findByIDAndUpdate({});
+    console.log(continuingWorkout);
+    res.status(200).json(continuingWorkout);
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+});
 
 
 module.exports = router;
