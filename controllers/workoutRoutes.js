@@ -20,11 +20,19 @@ router.put("/workouts/:id", async (req, res) => {
     );
     res.status(200).json(continuingWorkout);
   } catch (err) {
-    console.log(err);
     res.status(500);
   }
 });
 
+router.post("/workouts", async (req, res) => {
+  try {
+      const newWorkout = await db.Workout.create(req.body);
+      console.log(newWorkout);
+      res.status(200).json(newWorkout);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
 
 router.get("/workouts/range", async (req, res) => {
   try {
